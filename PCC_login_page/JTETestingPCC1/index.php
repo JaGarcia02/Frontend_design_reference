@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP and Bootstrap UI Kit | Management Information System</title>
+    <!-- PCC css stylesheet -->
+    <link rel="stylesheet" href="../JTETestingPCC1/css/mystyle.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body class="bg-dark">
+    <header class="barnav1 p-3 bg-dark text-white">
+        <div class="container">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+              <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+            </a>
+    
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+              <li><a href="#PCCHome" class="nav-link px-2 text-secondary">Home</a></li>
+              <li><a href="#PCCabout" class="nav-link px-2 text-white">About</a></li>
+              <li><a href="../JTETestingPCC1/crudop.php" class="nav-link px-2 text-white">CRUD Operations</a></li>
+              <li><a href="#PCCfaqs" class="nav-link px-2 text-white">FAQs</a></li>
+              <li><a href="#PCCpricing" class="nav-link px-2 text-white">Pricing</a></li>
+            </ul>
+    
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+              <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+            </form>
+    
+            <div class="text-end">
+              <button type="button" class="btn btn-outline-light me-2">Login</button>
+              <button type="button" class="btn btn-warning">Sign-up</button>
+            </div>
+          </div>
+        </div>
+      </header>
+<div class="PCC-mainbackground">
+
+  <!-- home banner -->
+  <div class="home-panel" id="PCCHome">
+    <div class="container">
+    <br><br><br><br>
+      <h1 class="text-uppercase text-light text-center">patient care corporation | <span class="text-info"> Bootstrap UI Kit version 5.3.0 </span></h1> 
+      <br><br><br><br>
+
+
+      <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+
+          <!-- carousel 1 -->
+          <div class="carousel-item active">
+            <!-- 3 of rows # 1 -->
+            <hr class="featurette-divider">
+      
+            <!-- Three columns of text below the carousel -->
+            <div class="row">
+              <div class="col-lg-4">
+                <img class="bd-placeholder-img text-center rounded-circle border border-3 border-primary" width="150" height="150" src="../JTETestingPCC1/images/hospitaluser-1.jpg" alt="">
+                <!-- <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg> -->
+                <h2 class="text-primary fw-bold">Linda Hebert</h2>
+                <p class="text-light">Lorem ipsum dolor sit amet. Ad placeat incidunt ut unde velit et similique libero. Ab deleniti similique id iusto possimus et quis dolorem ut omnis dolores. Eos expedita similique aut corporis provident et eius ullam et culpa cumque et error quia et quia sint..</p>
+                <p><a class="btn btn-outline-secondary text-light" href="#">View details &raquo;</a></p>
+              </div><!-- /.col-lg-4 -->
+              <div class="col-lg-4">
+                <img class="bd-placeholder-img text-center rounded-circle border border-3 border-primary" width="150" height="150" src="../JTETestingPCC1/images/hospitaluser-2.jpg" alt="">
+                <!-- <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg> -->
+                <h2 class="text-primary fw-bold">Randy Ramos</h2>
+                <p class="text-light">Lorem ipsum dolor sit amet. Ad placeat incidunt ut unde velit et similique libero. Ab deleniti similique id iusto possimus et quis dolorem ut omnis dolores. Eos expedita similique aut corporis provident et eius ullam et culpa cumque et error quia et quia sint..</p>
+                <p><a class="btn btn-outline-secondary text-light" href="#">View details &raquo;</a></p>
+              </div><!-- /.col-lg-4 -->
+              <div class="col-lg-4">
+                <img class="bd-placeholder-img text-center rounded-circle border border-3 border-primary" width="150" height="150" src="../JTETestingPCC1/images/hospitaluser-3.jpg" alt="">
+                <!-- <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg> -->
+                <h2 class="text-primary fw-bold">Gabriella Johnson</h2>
+                <p class="text-light">Lorem ipsum dolor sit amet. Ad placeat incidunt ut unde velit et similique libero. Ab deleniti similique id iusto possimus et quis dolorem ut omnis dolores. Eos expedita similique aut corporis provident et eius ullam et culpa cumque et error quia et quia sint..</p>
+                <p><a class="btn btn-outline-secondary text-light" href="#">View details &raquo;</a></p>
+              </div><!-- /.col-lg-4 -->
+            </div><!-- /.row -->
+      
+          </div>
+          <!-- end of carousel 1 -->
+
+          <!-- carousel 2 -->
+          <div class="carousel-item">
+            <!-- 3 of rows # 2 -->
+            <hr class="featurette-divider">
+      
+            <!-- Three columns of text below the carousel -->
+            <div class="row">
+              <div class="col-lg-4">
+                <img class="bd-placeholder-img text-center rounded-circle border border-3 border-primary" width="150" height="150" src="../JTETestingPCC1/images/hospitaluser-4.jpg" alt="">
+                <!-- <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg> -->
+                <h2 class="text-primary fw-bold">Ronald Ayala</h2>
+                <p class="text-light">Lorem ipsum dolor sit amet. Ad placeat incidunt ut unde velit et similique libero. Ab deleniti similique id iusto possimus et quis dolorem ut omnis dolores. Eos expedita similique aut corporis provident et eius ullam et culpa cumque et error quia et quia sint..</p>
+                <p><a class="btn btn-outline-secondary text-light" href="#">View details &raquo;</a></p>
+              </div><!-- /.col-lg-4 -->
+              <div class="col-lg-4">
+                <img class="bd-placeholder-img text-center rounded-circle border border-3 border-primary" width="150" height="150" src="../JTETestingPCC1/images/hospitaluser-5.jpg" alt="">
+                <!-- <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg> -->
+                <h2 class="text-primary fw-bold">Jessica Morris</h2>
+                <p class="text-light">Lorem ipsum dolor sit amet. Ad placeat incidunt ut unde velit et similique libero. Ab deleniti similique id iusto possimus et quis dolorem ut omnis dolores. Eos expedita similique aut corporis provident et eius ullam et culpa cumque et error quia et quia sint..</p>
+                <p><a class="btn btn-outline-secondary text-light" href="#">View details &raquo;</a></p>
+              </div><!-- /.col-lg-4 -->
+              <div class="col-lg-4">
+                <img class="bd-placeholder-img text-center rounded-circle border border-3 border-primary" width="150" height="150" src="../JTETestingPCC1/images/hospitaluser-6.jpg" alt="">
+                <!-- <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg> -->
+                <h2 class="text-primary fw-bold">Rachel Steele</h2>
+                <p class="text-light">Lorem ipsum dolor sit amet. Ad placeat incidunt ut unde velit et similique libero. Ab deleniti similique id iusto possimus et quis dolorem ut omnis dolores. Eos expedita similique aut corporis provident et eius ullam et culpa cumque et error quia et quia sint..</p>
+                <p><a class="btn btn-outline-secondary text-light" href="#">View details &raquo;</a></p>
+              </div><!-- /.col-lg-4 -->
+            </div><!-- /.row -->
+
+          </div> <!-- end of carousel 2 -->
+
+          <!-- carousel 3 -->
+          <div class="carousel-item">
+            <!-- 3 of rows # 3 -->
+            <hr class="featurette-divider">
+      
+            <!-- Three columns of text below the carousel -->
+            <div class="row">
+              <div class="col-lg-4">
+                <img class="bd-placeholder-img text-center rounded-circle border border-3 border-primary" width="150" height="150" src="../JTETestingPCC1/images/hospitaluser-7.jpg" alt="">
+                <!-- <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg> -->
+                <h2 class="text-primary fw-bold">Richard Williams</h2>
+                <p class="text-light">Lorem ipsum dolor sit amet. Ad placeat incidunt ut unde velit et similique libero. Ab deleniti similique id iusto possimus et quis dolorem ut omnis dolores. Eos expedita similique aut corporis provident et eius ullam et culpa cumque et error quia et quia sint..</p>
+                <p><a class="btn btn-outline-secondary text-light" href="#">View details &raquo;</a></p>
+              </div><!-- /.col-lg-4 -->
+              <div class="col-lg-4">
+                <img class="bd-placeholder-img text-center rounded-circle border border-3 border-primary" width="150" height="150" src="../JTETestingPCC1/images/hospitaluser-8.jpg" alt="">
+                <!-- <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg> -->
+                <h2 class="text-primary fw-bold">Patrick Burke</h2>
+                <p class="text-light">Lorem ipsum dolor sit amet. Ad placeat incidunt ut unde velit et similique libero. Ab deleniti similique id iusto possimus et quis dolorem ut omnis dolores. Eos expedita similique aut corporis provident et eius ullam et culpa cumque et error quia et quia sint..</p>
+                <p><a class="btn btn-outline-secondary text-light" href="#">View details &raquo;</a></p>
+              </div><!-- /.col-lg-4 -->
+              <div class="col-lg-4">
+                <img class="bd-placeholder-img text-center rounded-circle border border-3 border-primary" width="150" height="150" src="../JTETestingPCC1/images/hospitaluser-9.jpg" alt="">
+                <!-- <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg> -->
+                <h2 class="text-primary fw-bold">Emily Adams</h2>
+                <p class="text-light">Lorem ipsum dolor sit amet. Ad placeat incidunt ut unde velit et similique libero. Ab deleniti similique id iusto possimus et quis dolorem ut omnis dolores. Eos expedita similique aut corporis provident et eius ullam et culpa cumque et error quia et quia sint..</p>
+                <p><a class="btn btn-outline-secondary text-light" href="#">View details &raquo;</a></p>
+              </div><!-- /.col-lg-4 -->
+            </div><!-- /.row -->
+
+          </div> <!-- end of carousel 3 -->
+
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+
+
+
+    </div>  
+  </div>
+  
+    <!-- About -->
+    <div class="about-panel" id="PCCabout"> 
+      <div class="container">
+        <h2 class="text-uppercase text-light text-center">about <span class="text-info">patient</span> <span class="text-light">care</span> <span class="text-primary">corporation</span></h2>
+        <br><br><br><br>
+      <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row featurette">
+              <div class="col-md-7">
+                <h2 class="featurette-heading text-info fw-bold lh-1">First featurette heading. <span class="text-body-secondary">It’ll blow your mind.</span></h2>
+                <p class="text-light">Lorem ipsum dolor sit amet. Sed cumque numquam et dignissimos provident id neque ipsa eos veniam quia quo quibusdam temporibus est delectus laboriosam aut dignissimos quos. Est nulla voluptas ut corporis aliquam eos molestiae voluptate? Sit magni ipsum et officiis voluptatem in consequatur illum aut sapiente aliquid. Qui pariatur quia aut dolore temporibus sit perferendis repellendus id magni similique. </p> 
+                <p class="text-light">A dolorem consequatur ut illo libero et eveniet sunt sed velit deleniti ut illo soluta ut impedit eveniet. Nam adipisci dolorum aut esse laboriosam et quam molestiae rem magni animi. Qui explicabo doloribus ut ratione unde sit autem dolores et ipsum laudantium aut blanditiis consequatur.</p>
+                
+              </div>
+              <div class="col-md-5">
+                <img src="../JTETestingPCC1/images/hospitaldockdrama.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" alt="...">
+                <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg> -->
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row featurette">
+              <div class="col-md-7 order-md-2">
+                <h2 class="featurette-heading text-info fw-bold lh-1">Oh yeah, it’s that good. <span class="text-body-secondary">See for yourself.</span></h2>
+                <p class="text-light">Lorem ipsum dolor sit amet. Sed cumque numquam et dignissimos provident id neque ipsa eos veniam quia quo quibusdam temporibus est delectus laboriosam aut dignissimos quos. Est nulla voluptas ut corporis aliquam eos molestiae voluptate? Sit magni ipsum et officiis voluptatem in consequatur illum aut sapiente aliquid. Qui pariatur quia aut dolore temporibus sit perferendis repellendus id magni similique. </p> 
+                <p class="text-light">A dolorem consequatur ut illo libero et eveniet sunt sed velit deleniti ut illo soluta ut impedit eveniet. Nam adipisci dolorum aut esse laboriosam et quam molestiae rem magni animi. Qui explicabo doloribus ut ratione unde sit autem dolores et ipsum laudantium aut blanditiis consequatur.</p>
+                
+              </div>
+              <div class="col-md-5 order-md-1">
+                <img src="../JTETestingPCC1/images/hospitaldoctorsmeeting.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" alt="...">
+                <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg> -->
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row featurette">
+              <div class="col-md-7">
+                <h2 class="featurette-heading text-info fw-bold lh-1">And lastly, this one. <span class="text-body-secondary">Checkmate.</span></h2>
+                <p class="text-light">Lorem ipsum dolor sit amet. Sed cumque numquam et dignissimos provident id neque ipsa eos veniam quia quo quibusdam temporibus est delectus laboriosam aut dignissimos quos. Est nulla voluptas ut corporis aliquam eos molestiae voluptate? Sit magni ipsum et officiis voluptatem in consequatur illum aut sapiente aliquid. Qui pariatur quia aut dolore temporibus sit perferendis repellendus id magni similique. </p> 
+                <p class="text-light">A dolorem consequatur ut illo libero et eveniet sunt sed velit deleniti ut illo soluta ut impedit eveniet. Nam adipisci dolorum aut esse laboriosam et quam molestiae rem magni animi. Qui explicabo doloribus ut ratione unde sit autem dolores et ipsum laudantium aut blanditiis consequatur.</p>
+                
+              </div>
+              <div class="col-md-5">
+                <img src="../JTETestingPCC1/images/gooddoctorhospital.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" alt="...">
+                <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      </div>
+    </div>
+
+    <!-- FAQs banner -->
+    <div class="FAQs-panel" id="PCCfaqs">
+      <div class="container">
+        <h2 class="text-uppercase text-light text-center"><span class="text-success">facts</span> <span class="text-info">answers</span> and <span class="text-primary">question</span></h2>
+      </div>
+    </div>  
+
+  <!-- Pricing banner -->
+  <div class="pricing-panel" id="PCCpricing">
+    <div class="container">
+      <h2 class="text-uppercase text-light text-center">Pricing Items</h2>
+    <table class="table table-dark table-column table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Item Name</th>
+          <th scope="col">Item Price</th>
+          <th scope="col">Item Image</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Syringes</td>
+          <td>P 50.00</td>
+          <td>@mdo</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+
+
+<footer class="container">
+  <!-- <p class="float-end"><a href="#">Back to top</a></p> -->
+  <hr class="featurette-divider">
+  <p class="text-info">Copyright &copy; 1973 - <span class="fw-bold text-warning"><?php echo date("Y");?></span> PATIENT CARE CORPORATION's BLOG &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+</footer>
+
+</div>
+
+
+
+
+
+
+      <!-- scripts fade in fade out -->
+
+      <!-- ajax scripts -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+      <!-- bootstrap scripts -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+</html>
