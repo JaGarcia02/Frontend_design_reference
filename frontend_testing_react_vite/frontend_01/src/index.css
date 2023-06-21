@@ -1,0 +1,206 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* ************************* Login ************************* */
+.loginMainContainer {
+  background: black;
+  height: 100vh;
+  width: 100%;
+}
+
+.loginBox {
+  background: white;
+  width: 500px;
+  height: 350px;
+  border: 2px solid red;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.loginBox h1 {
+  margin-top: 2rem;
+  font-size: 40px;
+}
+
+.loginBox form {
+  margin-top: 3rem;
+  font-family: sans-serif;
+  font-size: 18px;
+}
+
+.emailContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-left: 7.5rem;
+  padding-right: 6rem;
+}
+
+.emailContainer input {
+  height: 25px;
+  width: 14rem;
+  outline: none;
+  padding-left: 10px;
+  font-size: 16px;
+  border: 1.5px solid grey;
+}
+
+.passwordContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 5.5rem;
+  padding-right: 6rem;
+}
+
+.passwordContainer input {
+  height: 25px;
+  width: 14rem;
+  outline: none;
+  padding-left: 10px;
+  font-size: 16px;
+  border: 1.5px solid grey;
+}
+
+.loginButton {
+  width: 70%;
+  height: 2.5rem;
+  margin-top: 4rem;
+  border-radius: 20px;
+  cursor: pointer;
+  border: 1px solid grey;
+  margin-bottom: 1rem;
+}
+
+.loginButton:hover {
+  background: lightblue;
+  color: black;
+  transition: 0.2s;
+  font-size: 18px;
+}
+
+/* ************************* Signup ************************* */
+.signupMainContainer {
+  background: black;
+  height: 100vh;
+  width: 100%;
+}
+
+.singupBox {
+  background: white;
+  width: 500px;
+  height: 450px;
+  border: 2px solid red;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.singupBox h1 {
+  margin-top: 2rem;
+  font-size: 40px;
+}
+
+.singupBox form {
+  margin-top: 3rem;
+  font-family: sans-serif;
+  font-size: 18px;
+}
+
+/* fullname */
+.nameContainerSignup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+.nameContainerSignup input {
+  height: 25px;
+  width: 14rem;
+  outline: none;
+  padding-left: 10px;
+  font-size: 16px;
+  border: 1.5px solid grey;
+}
+
+/* email */
+.emailContainerSignup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-left: 8.2rem;
+  padding-right: 6rem;
+}
+
+.emailContainerSignup input {
+  height: 25px;
+  width: 14rem;
+  outline: none;
+  padding-left: 10px;
+  font-size: 16px;
+  border: 1.5px solid grey;
+}
+
+/* password */
+.passwordContainerSignup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+.passwordContainerSignup input {
+  height: 25px;
+  width: 14rem;
+  outline: none;
+  padding-left: 10px;
+  font-size: 16px;
+  border: 1.5px solid grey;
+}
+
+/* role */
+.roleContainerSignup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-left: 8.8rem;
+  padding-right: 6rem;
+}
+.roleContainerSignup input {
+  height: 25px;
+  width: 14rem;
+  outline: none;
+  padding-left: 10px;
+  font-size: 16px;
+  border: 1.5px solid grey;
+}
+
+.signupButton {
+  width: 70%;
+  height: 2.5rem;
+  margin-top: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  border: 1px solid grey;
+  margin-bottom: 1rem;
+}
+
+.signupButton:hover {
+  background: lightblue;
+  color: black;
+  transition: 0.2s;
+  font-size: 18px;
+}
