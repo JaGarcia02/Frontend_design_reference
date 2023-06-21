@@ -1,9 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useLoginMutation } from "../slices/usersApiSlice";
+import { useNavigate } from "react-router-dom";
+import { setCredentials } from "../slices/authSlice";
+import axios from "axios";
 
 const LoginPage = () => {
   const [inputs, setInputs] = useState({ email: "", password: "" });
-  const login_user = (e) => {
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const [login, { isLoading }] = useLoginMutation();
+
+  const { userInfo } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    if (userInfo) {
+      navigate("/dashboard");
+    }
+  }, [navigate, userInfo]);
+
+  const login_user = async (e) => {
     e.preventDefault();
+
     if (inputs.email == "" && inputs.password == "") {
       console.log("Enter your email & password!");
       alert("Enter your email & password!");
@@ -13,6 +33,10 @@ const LoginPage = () => {
     } else if (inputs.password == "") {
       console.log("Enter your password!");
       alert("Enter your password!");
+    } else {
+      const res = await login(inputs).unwrap();
+      dispatch(setCredentials({ ...res }));
+      navigate("/dashboard");
     }
   };
   return (
