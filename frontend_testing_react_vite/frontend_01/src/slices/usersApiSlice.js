@@ -12,6 +12,11 @@ export const userApiSlice = apiSlice.injectEndpoints({
         body: data,
       }),
     }),
+    logout: builder.mutation({
+      query: (data) => ({
+        url: `${USERS_URL}logout-user`,
+      }),
+    }),
   }),
 });
 

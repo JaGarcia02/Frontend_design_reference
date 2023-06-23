@@ -18,7 +18,9 @@ const LoginPage = () => {
 
   useEffect(() => {
     if (userInfo) {
-      navigate("/");
+      // this will set the cookie in the browser
+      Cookie.set("user-access-token", userInfo.payload.token);
+      navigate("/dashboard");
     }
   }, [navigate, userInfo]);
 
@@ -37,8 +39,7 @@ const LoginPage = () => {
     } else {
       const res = await login(inputs).unwrap();
       dispatch(setCredentials({ ...res }));
-      Cookie.set("user-access-token", userInfo.payload.token);
-      navigate("/");
+      navigate("/dashboard");
     }
   };
   return (
