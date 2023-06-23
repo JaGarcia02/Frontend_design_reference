@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useLoginMutation } from "../slices/usersApiSlice";
 import { useNavigate } from "react-router-dom";
 import { setCredentials } from "../slices/authSlice";
+import Cookie from "js-cookie";
 import axios from "axios";
 
 const LoginPage = () => {
@@ -17,7 +18,7 @@ const LoginPage = () => {
 
   useEffect(() => {
     if (userInfo) {
-      navigate("/dashboard");
+      navigate("/");
     }
   }, [navigate, userInfo]);
 
@@ -36,7 +37,8 @@ const LoginPage = () => {
     } else {
       const res = await login(inputs).unwrap();
       dispatch(setCredentials({ ...res }));
-      navigate("/dashboard");
+      Cookie.set("user-access-token", userInfo.payload.token);
+      navigate("/");
     }
   };
   return (
