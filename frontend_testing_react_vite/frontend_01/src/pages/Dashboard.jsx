@@ -1,11 +1,12 @@
 import Cookies from "js-cookie";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
   const cookie = Cookies.get("user-access-token");
   const localToken = localStorage.getItem("userInfo");
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   // const dispatch = useDispatch();
 
   const logout_user = () => {
@@ -14,22 +15,17 @@ const Dashboard = () => {
 
   useState(() => {
     const interval = setInterval(() => {
-      cookie;
-      console.log(cookie);
-    }, 1000);
+      if (!cookie) {
+        console.log("no token!");
+        // navigate("/");
+        // location.reload();
+      } else {
+        console.log(cookie);
+      }
+    }, 2000);
 
     return () => clearInterval(interval);
   }, []);
-
-  useState(() => {
-    const interval = setInterval(() => {
-      if (cookie == null) {
-        console.log("empty");
-      }
-    }, 1000);
-
-    return () => clearInterval(interval);
-  });
 
   return (
     <div>
