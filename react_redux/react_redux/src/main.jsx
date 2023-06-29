@@ -1,10 +1,27 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import "./index.css";
+import { configureStore } from "@reduxjs/toolkit";
+import { Provider } from "react-redux";
+import UserReducer from "./features/userSlice";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const store = configureStore({
+  reducer: {
+    user: UserReducer,
+  },
+});
+
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>
+);
+
+/**
+ * Important notes for this tutorial
+    - import configureStore and Provider
+    - in the folder of userSlice.js you can create your custom slice
+ */
