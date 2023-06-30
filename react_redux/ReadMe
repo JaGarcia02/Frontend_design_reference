@@ -1,0 +1,7 @@
+React Redux Toolkit Setup
+
+requirements:
+axios
+react-router-dom
+npm install react-redux
+npm install @reduxjs/toolkit
