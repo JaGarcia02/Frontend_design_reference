@@ -7,6 +7,7 @@ export const testSlice2 = createSlice({
   initialState,
   reducers: {
     test2: (state, action) => {
+      state.id = action.payload;
       state.message = action.payload;
     },
   },
