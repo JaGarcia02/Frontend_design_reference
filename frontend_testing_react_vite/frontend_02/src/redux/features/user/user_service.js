@@ -11,12 +11,23 @@ const login = async (user_data) => {
 };
 
 const logout = async (user_data) => {
-  const response = await axios.post(user_api_url + "/logout-user", user_data);
+  const response = await axios.get(user_api_url + "/logout-user");
+  localStorage.removeItem("user", JSON.stringify(response.data.token));
+  Cookie.remove(response.data.token);
+};
+
+const signup = async (register_data) => {
+  const response = await axios.post(
+    user_api_url + "/create-user",
+    register_data
+  );
+  return response.data;
 };
 
 const userServie = {
   login,
   logout,
+  signup,
 };
 
 export default userServie;

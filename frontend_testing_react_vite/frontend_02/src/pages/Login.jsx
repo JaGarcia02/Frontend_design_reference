@@ -21,8 +21,9 @@ const Login = () => {
     if (isErrorUser) {
       alert("Error");
     }
-    if (isSuccessUser || user) {
+    if (isSuccessUser) {
       alert("Success");
+      navigate("/dashboard");
     }
     dispatch(reset());
   }, [user, isLoadingUser, isErrorUser, isSuccessUser, messageUser]); // user is the response

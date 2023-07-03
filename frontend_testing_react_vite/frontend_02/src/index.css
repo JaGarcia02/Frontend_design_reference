@@ -113,13 +113,104 @@
 /* Register */
 .child-container {
   width: 100%;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Fullname */
-.fullname-container {
+.child-container h1 {
+  margin-top: 2rem;
+}
+
+.child-container form button {
+  margin-top: 5rem;
+  width: 12rem;
+  height: 2.5rem;
+  font-size: 18px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+}
+.child-container form button:hover {
+  background: purple;
+  color: white;
+  transition: 0.5s;
+  border: none;
+}
+
+.child-container form {
   width: 100%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.child-container label {
+  font-size: 18px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  margin-left: 10px;
+}
+
+/* Fullname input */
+.fullname-container {
+  width: 70%;
+  display: flex;
   justify-content: space-between;
-  background: grey;
+}
+.fullname-container input {
+  width: 20rem;
+  height: 1.5rem;
+  padding-left: 10px;
+  outline: none;
+  font-size: 16px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 20px;
+}
+
+/* Email input */
+.email-container {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+}
+.email-container input {
+  width: 20rem;
+  height: 1.5rem;
+  padding-left: 10px;
+  outline: none;
+  font-size: 16px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 20px;
+}
+
+/* Password input */
+.password-container {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+}
+.password-container input {
+  width: 20rem;
+  height: 1.5rem;
+  padding-left: 10px;
+  outline: none;
+  font-size: 16px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 20px;
+}
+
+/* Confrirm Password */
+.confirm-password-container {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+}
+.confirm-password-container input {
+  width: 20rem;
+  height: 1.5rem;
+  padding-left: 10px;
+  outline: none;
+  font-size: 16px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
