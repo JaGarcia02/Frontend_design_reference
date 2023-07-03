@@ -3,6 +3,7 @@
   padding: 0;
 }
 
+/* Login */
 .parent-container {
   border: 2px solid black;
   position: absolute;
@@ -102,4 +103,23 @@
   color: white;
   transition: 0.5s;
   border: none;
+}
+
+.register-link {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+/* Register */
+.child-container {
+  width: 100%;
+  display: block;
+}
+
+/* Fullname */
+.fullname-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background: grey;
 }
