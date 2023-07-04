@@ -59,6 +59,23 @@ export const logout_user = createAsyncThunk(
   }
 );
 
+export const check_token = createAsyncThunk(
+  "user/check-token",
+  async (token, thunkAPI) => {
+    try {
+      return await userServie.check_token(token);
+    } catch (error) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+      return thunkAPI.rejectWithValue(message);
+    }
+  }
+);
+
 export const userSlice = createSlice({
   name: "UserCredential",
   initialState,
@@ -107,6 +124,12 @@ export const userSlice = createSlice({
         state.isErrorUser = true;
         state.messageUser = action.payload;
         state.user = null;
+      })
+      // Check Token -state-
+      .addCase(check_token.rejected, (state, action) => {
+        state.isLoadingUser = false;
+        state.isErrorUser = true;
+        state.messageUser = action.payload;
       });
   },
 });

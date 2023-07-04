@@ -1,28 +1,35 @@
 import React, { useEffect, useState } from "react";
-import { logout_user, reset } from "../redux/features/user/user_slice";
+import {
+  check_token,
+  logout_user,
+  reset,
+} from "../redux/features/user/user_slice";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import Cookie from "js-cookie";
 
 const Dashboard = () => {
   const { user, isLoadingUser, isErrorUser, isSuccessUser, messageUser } =
     useSelector((state) => state.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const token = {
+    token: Cookie.get("user_token"),
+  };
   useEffect(() => {
-    if (isErrorUser) {
-      alert("Error");
-    }
-    if (isSuccessUser) {
-      alert("Logout successfull!");
-      navigate("/");
-      location.reload();
-    }
-    dispatch(reset());
-  }, [user, isLoadingUser, isErrorUser, isSuccessUser, messageUser]);
+    const interval = setInterval(() => {
+      dispatch(check_token(token));
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
 
   const logout = () => {
     dispatch(logout_user());
+    navigate("/");
+    location.reload();
   };
+
   return (
     <div>
       <h1>This is dashboard</h1>

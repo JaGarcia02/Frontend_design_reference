@@ -3,7 +3,11 @@
   padding: 0;
 }
 
-/* Login */
+body {
+  overflow: hidden;
+}
+
+/* ===================================== Login  ===================================== */
 .parent-container {
   border: 2px solid black;
   position: absolute;
@@ -110,12 +114,16 @@
   text-align: center;
 }
 
-/* Register */
+/* ===================================== Register ===================================== */
 .child-container {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: white;
+}
+
+.register-img {
 }
 
 .child-container h1 {

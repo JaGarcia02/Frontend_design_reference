@@ -24,10 +24,16 @@ const signup = async (register_data) => {
   return response.data;
 };
 
+const check_token = async (token) => {
+  const response = await axios.post(user_api_url + "/check-token", token);
+  return response.data;
+};
+
 const userServie = {
   login,
   logout,
   signup,
+  check_token,
 };
 
 export default userServie;
