@@ -19,10 +19,6 @@ const NavBar = () => {
     token: Cookie.get("user_token"),
   };
   useEffect(() => {
-    if (isLoadingUser) {
-      return <Spinner />;
-    }
-
     if (isErrorUser) {
       navigate("/dashboard");
       location.reload();
