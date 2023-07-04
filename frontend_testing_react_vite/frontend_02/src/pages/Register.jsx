@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { register_user, reset } from "../redux/features/user/user_slice";
 import { useNavigate } from "react-router-dom";
 import image1 from "../images/a7T2CA.jpg";
+import Spinner from "../components/Spinner";
 
 const Register = () => {
   const { user, isLoadingUser, isErrorUser, isSuccessUser, messageUser } =
@@ -21,10 +22,11 @@ const Register = () => {
     if (isErrorUser) {
       alert("Error");
     }
-    if (isSuccessUser || user) {
+    if (isSuccessUser) {
       alert("Success");
       navigate("/");
     }
+
     dispatch(reset());
   }, [user, isLoadingUser, isErrorUser, isSuccessUser, messageUser]);
 
@@ -43,6 +45,7 @@ const Register = () => {
 
     dispatch(register_user(register_data));
   };
+
   return (
     <>
       <img src={image1} alt="" className="register-img" />

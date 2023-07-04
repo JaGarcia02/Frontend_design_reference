@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import { login_user, reset } from "../redux/features/user/user_slice";
 import { useNavigate } from "react-router-dom";
+import Spinner from "../components/Spinner";
 
 const Login = () => {
   const { user, isLoadingUser, isErrorUser, isSuccessUser, messageUser } =
@@ -19,15 +20,24 @@ const Login = () => {
 
   useEffect(() => {
     if (isErrorUser) {
-      alert("Error");
+      console.log("error");
     }
     if (isSuccessUser) {
-      alert("Success");
       navigate("/dashboard");
     }
+
+    switch (messageUser) {
+      case "User not found, plaease try again!":
+        alert("User not found, plaease try again!");
+        break;
+    }
+
     dispatch(reset());
   }, [user, isLoadingUser, isErrorUser, isSuccessUser, messageUser]); // user is the response
 
+  if (isLoadingUser) {
+    return <Spinner />;
+  }
   const login = (e) => {
     e.preventDefault();
 

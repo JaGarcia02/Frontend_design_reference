@@ -5,6 +5,54 @@
 
 body {
   overflow: hidden;
+  height: 100vh;
+  width: 100%;
+}
+
+/* ===================================== Navbar  ===================================== */
+.navBar {
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: black;
+}
+.nav-container {
+  margin-top: 10px;
+}
+.nav-container header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 50px;
+  padding-right: 60px;
+}
+.text-logo {
+  font-size: 25px;
+  font-weight: 800;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.text-logo:hover {
+  color: aqua;
+  transition: 0.5s;
+}
+
+.nav-container header a {
+  text-decoration: none;
+  color: white;
+}
+.button-navbar button {
+  width: 100px;
+  height: 30px;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.button-navbar button:hover {
+  background: indianred;
+  transition: 0.2s;
+  border: none;
+  color: white;
 }
 
 /* ===================================== Login  ===================================== */
@@ -27,8 +75,8 @@ body {
 
 .left {
   width: 50%;
-  /* border-right: 1px solid black; */
-  box-shadow: 5.5px 0px rgb(200, 197, 197);
+  border-right: 2px solid black;
+  /* box-shadow: 10.5px 0px rgb(110, 109, 109); */
 }
 
 .picture {
@@ -42,6 +90,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background: whitesmoke;
 }
 
 .right form {
@@ -221,4 +270,35 @@ body {
   outline: none;
   font-size: 16px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===================================== Dashboard ===================================== */
+.dashboard-main-container {
+  display: flex;
+  margin-top: 3.3rem;
+  height: 100vh;
+  width: 100%;
+}
+
+/* ===================================== Loading animation ===================================== */
+.loadingSpinnerContainer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loadingSpinner {
+  width: 100px;
+  height: 100px;
+  border: 100px solid;
+  border-color: #000 transparent #555 transparent;
+  border-radius: 50%;
+  animation: spin 1.2s linear infinite;
 }
