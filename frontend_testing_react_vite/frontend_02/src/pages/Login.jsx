@@ -30,14 +30,19 @@ const Login = () => {
       case "User not found, plaease try again!":
         alert("User not found, plaease try again!");
         break;
+
+      case "Wrong password!":
+        alert("Wrong password!!");
+        break;
     }
 
     dispatch(reset());
   }, [user, isLoadingUser, isErrorUser, isSuccessUser, messageUser]); // user is the response
 
-  if (isLoadingUser) {
-    return <Spinner />;
-  }
+  // if (isLoadingUser) {
+  //   return <Spinner />;
+  // }
+
   const login = (e) => {
     e.preventDefault();
 

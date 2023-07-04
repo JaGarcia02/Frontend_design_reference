@@ -8,6 +8,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Cookie from "js-cookie";
 import Spinner from "../components/Spinner";
+import jwt_decode from "jwt-decode";
 
 const NavBar = () => {
   const { user, isLoadingUser, isErrorUser, isSuccessUser, messageUser } =
@@ -47,16 +48,17 @@ const NavBar = () => {
     location.reload();
   };
 
-  if (isLoadingUser) {
-    return <Spinner />;
-  }
+  // if (isLoadingUser) {
+  //   return <Spinner />;
+  // }
+  const decoded_token = jwt_decode(Cookie.get("user_token"));
 
   return (
     <div className="navBar">
       <div className="nav-container">
         <header>
           <a href="" className="text-logo">
-            Todo App
+            {decoded_token.name}
           </a>
           <div className="button-navbar">
             {Cookie.get("user_token") ? (
