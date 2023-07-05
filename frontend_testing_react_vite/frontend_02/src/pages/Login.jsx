@@ -75,7 +75,7 @@ const Login = () => {
   };
 
   return (
-    <div className="parent-container">
+    <div className="parent-container-main">
       <div className="left">
         <img src={image1} alt="" className="picture" />
       </div>

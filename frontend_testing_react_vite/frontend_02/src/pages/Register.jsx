@@ -49,7 +49,7 @@ const Register = () => {
   return (
     <>
       <img src={image1} alt="" className="register-img" />
-      <div className="parent-container">
+      <div className="parent-container-main">
         <div className="child-container">
           <h1>Sign up here.</h1>
           <form onSubmit={register} action="">

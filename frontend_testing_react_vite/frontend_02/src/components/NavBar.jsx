@@ -21,12 +21,20 @@ const NavBar = () => {
   };
   useEffect(() => {
     if (isErrorUser) {
-      navigate("/dashboard");
-      location.reload();
+      // navigate("/dashboard");
+      // location.reload();
     }
     if (isSuccessUser) {
-      alert("Logout User");
       navigate("/dashboard");
+    }
+    switch (messageUser) {
+      case "Token Expired!":
+        alert("Your session has expired, please login again!");
+        Cookie.remove("user_token");
+        localStorage.removeItem("user");
+        navigate("/");
+        location.reload();
+        break;
     }
     dispatch(reset());
   }, [user, isLoadingUser, isErrorUser, isSuccessUser, messageUser]);
@@ -35,7 +43,7 @@ const NavBar = () => {
     const interval = setInterval(() => {
       if (!Cookie.get("user_token")) {
         alert("Empty");
-        navigate("/");
+        // navigate("/");
       }
       dispatch(check_token(token));
     }, 2000);
@@ -48,26 +56,21 @@ const NavBar = () => {
     location.reload();
   };
 
-  // if (isLoadingUser) {
-  //   return <Spinner />;
-  // }
   const decoded_token = jwt_decode(Cookie.get("user_token"));
 
   return (
     <div className="navBar">
-      <div className="nav-container">
-        <header>
+      <div className="navBar-child-container">
+        <div className="navBar-item1">
           <a href="" className="text-logo">
             {decoded_token.name}
           </a>
-          <div className="button-navbar">
-            {Cookie.get("user_token") ? (
-              <button onClick={logout}>Logout</button>
-            ) : (
-              <button>Login</button>
-            )}
-          </div>
-        </header>
+        </div>
+        <div className="navBar-item2">
+          <button disabled={isLoadingUser} onClick={logout}>
+            Logout
+          </button>
+        </div>
       </div>
     </div>
   );
