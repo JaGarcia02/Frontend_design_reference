@@ -11,6 +11,7 @@ import NavBar from "../components/NavBar";
 import jwt_decode from "jwt-decode";
 import axios from "axios";
 import AddTodo from "../components/Todo/AddTodo";
+import UpdateTodo from "../components/Todo/UpdateTodo";
 
 const Dashboard = () => {
   const [taskList, setTaskList] = useState([]);
@@ -18,6 +19,7 @@ const Dashboard = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [openAdd, setOpenAdd] = useState(false);
+  const [openUpdate, setOpenUpdate] = useState({ activator: null, id: null });
   const decoded_token = jwt_decode(Cookie.get("user_token"));
 
   useEffect(() => {
@@ -43,6 +45,13 @@ const Dashboard = () => {
       <NavBar />
 
       {openAdd && <AddTodo setOpenAdd={setOpenAdd} setTaskList={setTaskList} />}
+      {openUpdate.id && (
+        <UpdateTodo
+          openUpdate={openUpdate}
+          setOpenUpdate={setOpenUpdate}
+          setTaskList={setTaskList}
+        />
+      )}
       <div className="dashboard-main-container">
         <div className="todo-title">
           <h1>Task List</h1>
@@ -102,7 +111,14 @@ const Dashboard = () => {
                         </td>
                         <td className="td-4">
                           <div className="table-btn">
-                            <button className="btn-update">Update</button>
+                            <button
+                              className="btn-update"
+                              onClick={() =>
+                                setOpenUpdate({ activator: data, id: data._id })
+                              }
+                            >
+                              Update
+                            </button>
                             <button
                               className="btn-remove"
                               onClick={() => delete_task(data._id)}

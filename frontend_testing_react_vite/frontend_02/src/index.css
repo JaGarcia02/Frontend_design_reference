@@ -522,7 +522,7 @@ body {
 
 /* Todo Component */
 
-/* Todo Add modal */
+/* ******************************* Todo Add modal ******************************* */
 .todoAdd-main {
   position: absolute;
   top: 0;
@@ -535,8 +535,8 @@ body {
   position: absolute;
   height: 250px;
   width: 350px;
-  border: 2px black solid;
-  background: wheat;
+  border: 3px green solid;
+  background: whitesmoke;
   opacity: 100%;
   top: 50%;
   left: 50%;
@@ -563,6 +563,7 @@ body {
   color: red;
   outline: none;
   border: 1px red solid;
+  cursor: pointer;
 }
 .todoAdd-btnClose:hover {
   background: red;
@@ -585,16 +586,17 @@ body {
 .todoAdd-btnSave {
   position: absolute;
   width: 6rem;
-  height: 1.5rem;
-  bottom: 5rem;
+  height: 2rem;
+  bottom: 4rem;
   font-weight: bold;
   font-size: 12px;
   outline: none;
   background: white;
-  border: 1px solid blueviolet;
+  border: 2px solid green;
+  cursor: pointer;
 }
 .todoAdd-btnSave:hover {
-  background: blueviolet;
+  background: green;
   color: white;
   transition: 0.5s;
 }
@@ -604,4 +606,89 @@ body {
   top: 3rem;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   text-decoration: underline;
+}
+
+/* ******************************* Todo Update modal ******************************* */
+.todoUpdate-main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+}
+.todoUpdate-container {
+  position: absolute;
+  height: 250px;
+  width: 350px;
+  border: 3px orange solid;
+  background: whitesmoke;
+  opacity: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title-todoUpdate {
+  position: absolute;
+  top: 3rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-decoration: underline;
+}
+.todoUpdate-btnClose {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-weight: bold;
+  color: red;
+  outline: none;
+  border: 1px red solid;
+  cursor: pointer;
+}
+.todoUpdate-btnClose:hover {
+  background: red;
+  color: white;
+  transition: 0.5s;
+}
+.todoUpdate-inputContainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 60px;
+}
+.todoUpdate-inputContainer label {
+  font-size: 22px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+}
+.todoUpdate-inputContainer input {
+  width: 10rem;
+  padding-left: 5px;
+  outline: none;
+  margin-left: 10px;
+}
+.todoUpdate-inputContainer {
+  width: 10rem;
+  padding-left: 5px;
+  outline: none;
+}
+.todoUpdate-btnSave {
+  position: absolute;
+  width: 6rem;
+  height: 2rem;
+  bottom: 4rem;
+  font-weight: bold;
+  font-size: 12px;
+  outline: none;
+  background: white;
+  border: 2px solid orange;
+  cursor: pointer;
+}
+.todoUpdate-btnSave:hover {
+  background: orange;
+  color: white;
+  transition: 0.5s;
 }
