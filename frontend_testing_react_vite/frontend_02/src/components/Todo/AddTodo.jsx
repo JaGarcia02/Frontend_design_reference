@@ -13,13 +13,14 @@ const AddTodo = ({ setOpenAdd, setTaskList }) => {
       alert("Input field is empty!");
     }
     axios
-      .post(`http://localhost:6969/todo/api/create-task`, {
+      .post("http://localhost:6969/todo/api/create-task", {
         task: newTask,
         user: token.email,
       })
       .then((res) => {
-        setTaskList(res.data);
         setNewtask("");
+        setTaskList(res.data);
+        setOpenAdd(false);
       })
       .catch((err) => console.log(err));
   };

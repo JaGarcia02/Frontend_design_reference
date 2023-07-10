@@ -14,6 +14,7 @@ import AddTodo from "../components/Todo/AddTodo";
 
 const Dashboard = () => {
   const [taskList, setTaskList] = useState([]);
+  const [searchTask, setSearchTask] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [openAdd, setOpenAdd] = useState(false);
@@ -21,10 +22,21 @@ const Dashboard = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:6969/todo/api/viewTask-byUser-task`)
+      .get(
+        `http://localhost:6969/todo/api/viewTask-byUser-task/${decoded_token.email}`
+      )
       .then((res) => setTaskList(res.data))
       .catch((err) => console.log(err));
   }, []);
+
+  const delete_task = (data) => {
+    axios
+      .delete(
+        `http://localhost:6969/todo/api/delete-task/${data}/${decoded_token.email}`
+      )
+      .then((res) => setTaskList(res.data))
+      .catch((err) => console.log(err));
+  };
 
   return (
     <>
@@ -35,14 +47,14 @@ const Dashboard = () => {
         <div className="todo-title">
           <h1>Task List</h1>
         </div>
+
         <div className="main-content">
-          <div className="left-content">
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum
-              natus quibusdam veniam excepturi suscipit ratione nobis ad
-              cupiditate quidem sint sapiente cum iure quisquam perspiciatis
-              vero voluptas, at, voluptatum quae.
-            </p>
+          <div className="task-search-container">
+            <input
+              type="text"
+              placeholder="Search taks. . ."
+              onChange={(e) => setSearchTask(e.target.value)}
+            />
           </div>
           <div className="todo-table">
             <table>
@@ -65,27 +77,43 @@ const Dashboard = () => {
                 </tr>
               </thead>
               <tbody>
-                {taskList.map((data, index) => {
-                  return (
-                    <tr>
-                      <td className="td-1">
-                        <span>{index + 1}</span>
-                      </td>
-                      <td className="td-2">
-                        <span>{data.user}</span>
-                      </td>
-                      <td className="td-3">
-                        <span>{data.task}</span>
-                      </td>
-                      <td className="td-4">
-                        <div className="table-btn">
-                          <button className="btn-update">Update</button>
-                          <button className="btn-remove">Remove</button>
-                        </div>
-                      </td>
-                    </tr>
-                  );
-                })}
+                {taskList
+                  .filter((val) => {
+                    if (
+                      searchTask == "" ||
+                      val.task
+                        .toLowerCase()
+                        .includes(searchTask.toLocaleLowerCase())
+                    ) {
+                      return val;
+                    }
+                  })
+                  .map((data, index) => {
+                    return (
+                      <tr>
+                        <td className="td-1">
+                          <span>{index + 1}</span>
+                        </td>
+                        <td className="td-2">
+                          <span>{data.user}</span>
+                        </td>
+                        <td className="td-3">
+                          <span>{data.task}</span>
+                        </td>
+                        <td className="td-4">
+                          <div className="table-btn">
+                            <button className="btn-update">Update</button>
+                            <button
+                              className="btn-remove"
+                              onClick={() => delete_task(data._id)}
+                            >
+                              Remove
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    );
+                  })}
               </tbody>
             </table>
           </div>
