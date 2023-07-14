@@ -15,10 +15,17 @@ const NavBar = () => {
     useSelector((state) => state.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+  const userChannel = new BroadcastChannel("test");
   const token = {
     token: Cookie.get("user_token"),
   };
+
+  const logout = () => {
+    dispatch(logout_user());
+    navigate("/");
+    location.reload();
+  };
+
   useEffect(() => {
     if (isErrorUser) {
       // navigate("/dashboard");
@@ -40,21 +47,26 @@ const NavBar = () => {
   }, [user, isLoadingUser, isErrorUser, isSuccessUser, messageUser]);
 
   useEffect(() => {
+    userChannel.onmessage = (data) => {
+      if (data.data.payload.type === "SIGN_OUT_USER") {
+        dispatch(logout_user());
+        navigate("/");
+        location.reload();
+      }
+    };
+  }, [logout]);
+
+  useEffect(() => {
     const interval = setInterval(() => {
       if (!Cookie.get("user_token")) {
         alert("Empty");
-        // navigate("/");
+        navigate("/");
+        location.reload();
       }
       dispatch(check_token(token));
     }, 2000);
     return () => clearInterval(interval);
   }, []);
-
-  const logout = () => {
-    dispatch(logout_user());
-    navigate("/");
-    location.reload();
-  };
 
   const decoded_token = jwt_decode(Cookie.get("user_token"));
 
