@@ -2,48 +2,54 @@ import React, { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import uniqid from "uniqid";
 
-const CreateTask = ({ taskData, setTaskData }) => {
+const CreateTask = ({ tasks, setTasks }) => {
   const [task, setTask] = useState({ id: "", name: "", status: "todo" });
 
-  useEffect(() => {
-    setTaskData(JSON.parse(localStorage.getItem("task_data")));
-  }, []);
-
-  const Create_Task = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (task.name == "") {
-      return toast.error("Task field is empty!");
+    if (
+      task.name.length == "" &&
+      tasks.filter((f) => f.status === "todo").length === 0
+    ) {
+      toast.error("Input field is empty!", {
+        icon: "🤬",
+        position: "top-right",
+      });
+    } else if (task.name.length === 3) {
+      toast.error("A task must have more than 3 characters.", {
+        icon: "💩",
+        position: "top-right",
+      });
+    } else if (task.name.length > 50) {
+      toast.error("A task must be less than 50 characters.", {
+        icon: "🤡",
+        position: "top-right",
+      });
     }
 
-    if (task.name.length < 3) {
-      return toast.error("Must have more than 3 characters!");
+    if (tasks.filter((f) => f.status === "todo").length === 5) {
+      toast("Todo list is full!", { icon: "🦥" });
+    } else {
+      if (task.name.length > 3 && task.name.length != "") {
+        setTasks((prev) => {
+          const list = [...prev, task];
+          localStorage.setItem("tasks", JSON.stringify(list));
+          setTask({ id: "", name: "", status: "todo" });
+          toast.success("Task created!", {
+            position: "bottom-right",
+            icon: "🤑",
+          });
+          return list;
+        });
+      }
     }
-
-    if (task.name.length > 100) {
-      return toast.error("Must not be more than 100 characters!");
-    }
-
-    setTaskData((list_data) => {
-      const list = [...list_data, task];
-
-      localStorage.setItem("task_data", JSON.stringify(list));
-
-      return list;
-    });
-
-    toast.success("Task created.");
-
-    setTask({
-      id: "",
-      name: "",
-      status: "todo",
-    });
   };
+
   return (
     <>
       <Toaster />
-      <form onSubmit={Create_Task}>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           className="border-2 border-slate-400 bg-slate-100 rounded-md mr-4 h-12 w-64 px-1"
