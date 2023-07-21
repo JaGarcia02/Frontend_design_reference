@@ -1,5 +1,5 @@
 import React from "react";
-import sofaImg from "../../assets/images/noBg.png";
+import sofaImg from "../../assets/images/TailwindCSS_project01/noBg.png";
 
 const ImageContainer = () => {
   return (
