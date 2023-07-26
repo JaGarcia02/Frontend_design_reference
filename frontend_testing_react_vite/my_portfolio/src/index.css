@@ -1,3 +1,373 @@
+/* ================ Google Fonts ================ */
+@import url("https://fonts.googleapis.com/css2?family=Alata&family=Libre+Baskerville&family=Mulish:wght@700&family=Poppins:ital,wght@0,900;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* ================ TailwindCss ================ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  /* Colors */
+  --first-color: hsl(353, 100%, 65%);
+  --title-color: hsl(244, 24%, 26%);
+  --text-color: hsl(244, 16%, 43%);
+  --body-color: hsl(258, 60%, 98%);
+  --container-color: #fff;
+
+  /* Fonts */
+  --body-font: "Rubik", sans-serif;
+  --h1-font-size: 2.5rem;
+  --h2-font-size: 1.5rem;
+  --h3-font-size: 1.25rem;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.875rem;
+  --smaller-font-size: 0.813rem;
+
+  /* Font Weight */
+  --font-meduim: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  /* Box Shadow */
+  --shadow: 0px 5px 20px 0px rgb(69 67 96 / 10%);
+
+  /* Border Radius */
+  --border-radius: 20px;
+}
+
+/* ================ Responsive Typography ================ */
+@media screen and (max-width: 1024px) {
+  :root {
+    --h1-font-size: 1.75rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: 0.938rem;
+    --small-font-size: 0.813rem;
+    --smaller-font-size: 0.75rem;
+  }
+}
+
+/* Base Layout */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+button,
+input,
+textarea {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+body {
+  background-color: var(--body-color);
+  line-height: 1.7;
+  color: var(--text-color);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--title-color);
+  font-weight: var(--font-semibold);
+  line-height: 1.2;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+/* Main */
+.main {
+  margin-left: 155px;
+}
+/* Main */
+
+/* =================== Reusable Css Classes =================== */
+
+.container {
+  max-width: 1080px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}
+.grid {
+  display: grid;
+}
+
+.section {
+  padding-top: 7rem;
+  padding-bottom: 2rem;
+}
+
+.section__title {
+  font-size: var(--h1-font-size);
+  margin-left: 0.875rem;
+  font-weight: var(--font-bold);
+  position: relative;
+  margin-bottom: 3.75rem;
+}
+
+.section__title::before {
+  content: "";
+  background: url(./assets/my_portfolio/dots-bg.svg);
+  height: 2.25rem;
+  width: 2.25rem;
+  position: absolute;
+  left: -0.875rem;
+  top: -0.875rem;
+}
+
+.btn {
+  padding: 0.75rem 2rem;
+  line-height: 1;
+  border-radius: 1.875rem;
+  box-shadow: 0 0 1px rgb(0 0 0 /0%);
+  border: 1px solid transparent;
+  color: #fff;
+  display: inline-block;
+  background-color: var(--first-color);
+  font-weight: var(--font-bold);
+}
+
+@keyframes button-push {
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.btn:hover {
+  animation: button-push 0.3s linear;
+}
+
+/* ******************* Sidebar Component ******************* */
+.aside {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: var(--body-color);
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 2.5rem;
+  width: 155px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+.img__logo {
+  width: 100px;
+  height: 100px;
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.nav__link {
+  font-size: 1.5rem;
+  color: var(--title-color);
+  font-weight: var(--font-bold);
+  transition: 0.3s;
+}
+
+.nav__link:hover {
+  color: hsl(43, 100%, 68%);
+}
+
+.copyright {
+  color: hsl(245, 15%, 65%);
+  font-size: var(--small-font-size);
+  transform: rotate(-180deg);
+  writing-mode: vertical-rl;
+}
+/* ******************* Sidebar Component ******************* */
+
+/* ******************* Home Component ******************* */
+.home {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  max-width: 540px;
+  text-align: center;
+  align-items: center;
+  justify-items: center;
+}
+
+.home__img {
+  margin-bottom: 1.5rem;
+  height: auto;
+  width: 100px;
+}
+
+.home__name {
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-bold);
+  margin-bottom: 0.5rem;
+}
+
+.home__socials {
+  display: flex;
+  column-gap: 1.75rem;
+  margin: 1.5rem 0;
+}
+
+.home__social-link {
+  color: var(--title-color);
+  font-size: 1.3rem;
+  transition: 0.3s;
+}
+
+.home__social-link:hover {
+  color: hsl(43, 100%, 68%);
+}
+
+.scroll__down {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 0;
+  width: 100%;
+}
+
+.home__scroll-name {
+  font-size: var(--small-font-size);
+}
+
+.mouse {
+  border: 2px solid #454360;
+  display: block;
+  height: 1.6rem;
+  width: 1.25rem;
+  margin: auto;
+  margin-top: 0.75rem;
+  border-radius: 1rem;
+  position: relative;
+}
+
+@keyframes ani-mouse {
+  0% {
+    top: 3rem;
+  }
+
+  15% {
+    top: 3.5rem;
+  }
+
+  50% {
+    top: 3.5rem;
+  }
+
+  100% {
+    top: 3.5rem;
+  }
+}
+
+.wheel {
+  background-color: var(--title-color);
+  position: absolute;
+  border-radius: 100%;
+  width: 0.25rem;
+  height: 0.25rem;
+  top: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: ani-mouse 2.5s linear infinite;
+}
+
+.shapes {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.shape {
+  position: absolute;
+}
+
+.s1 {
+  left: 2%;
+  top: 10%;
+}
+
+.s2 {
+  left: 18%;
+  top: 30%;
+}
+
+.s3 {
+  left: 5%;
+  bottom: 30%;
+}
+
+.s4 {
+  left: 2%;
+  bottom: 10%;
+}
+
+.s5 {
+  left: 44%;
+  top: 10%;
+}
+
+.s6 {
+  left: 36%;
+  top: 10%;
+}
+
+.s7 {
+  top: 20%;
+  bottom: 25%;
+}
+
+.s8 {
+  right: 24%;
+  bottom: 20%;
+}
+
+.s9 {
+  right: 2%;
+  top: 10%;
+}
+
+.s10 {
+  top: 45%;
+  right: 11%;
+}
+
+.s11 {
+  bottom: 10%;
+  right: 2%;
+}
+/* ******************* Home Component ******************* */
