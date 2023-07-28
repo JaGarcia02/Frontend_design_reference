@@ -4,13 +4,16 @@
 }
 
 .main {
+  margin-top: 25px;
+  width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+}
+
+.main2 {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .content-1 {
@@ -19,6 +22,7 @@
   height: 250px;
   margin-right: 10px;
   padding: 5px;
+  overflow: auto;
 }
 
 .content-1 h1 {
@@ -72,9 +76,22 @@
 
 .content-2 {
   border: 1px solid black;
-  width: 310px;
+  width: 380px;
   height: 260px;
   overflow: auto;
+  margin-right: 10px;
+}
+
+.content-2 input {
+  margin-top: 5px;
+  width: 100%;
+  padding: 5px;
+}
+
+.cutofId input {
+  margin-top: 0;
+  width: 80%;
+  height: 10px;
 }
 
 .content-2 h1 {
@@ -95,4 +112,66 @@
 .content-2 table td {
   text-align: center;
   border: 1px solid gray;
+}
+
+.content-3 {
+  border: 1px solid black;
+  width: 310px;
+  height: 260px;
+  overflow: auto;
+  margin-right: 10px;
+}
+
+.content-3 h1 {
+  text-align: center;
+}
+
+.content-3 table {
+  width: 100%;
+  height: auto;
+}
+
+.content-3 table th {
+  padding: 5px;
+  background: gainsboro;
+  text-align: center;
+}
+
+.content-3 table td {
+  text-align: center;
+  border: 1px solid gray;
+}
+
+.cutofId {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.cutoff-btn {
+  width: 50%;
+  height: 25px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 16px;
+  font-weight: 900;
+  transition: 0.5s ease-in-out;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0px 2px gray;
+}
+
+.cutoff-btn:hover {
+  background: blueviolet;
+  border: none;
+  color: aliceblue;
+  box-shadow: 0px 5px burlywood;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  padding: 4px;
 }

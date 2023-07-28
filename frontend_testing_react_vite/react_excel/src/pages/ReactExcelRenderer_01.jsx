@@ -12,10 +12,14 @@ const ReactExcelRenderer_01 = () => {
   const [buttonHide, setButtonHide] = useState(false);
 
   //  for timekeeping
-  const [Theader, setTheder] = useState([]);
+  const [Theader, setTheader] = useState([]);
   const [Tcols, setTcols] = useState([]);
   const [timekeep, setTimeKeep] = useState([]);
   const [dtr, setDtr] = useState([]);
+  const [dateCutoff, setDateCutoff] = useState({ start: "", end: "" });
+  const [TbuttonHide, setTButtonHide] = useState(false);
+
+  console.log(Tcols);
 
   useEffect(() => {
     axios
@@ -28,7 +32,7 @@ const ReactExcelRenderer_01 = () => {
     axios
       .get("http://localhost:8587/test/get-data-timekeeping")
       .then((res) => {
-        setDtr(res.data);
+        console.log(res);
       })
       .catch((err) => {
         console.log(err);
@@ -60,13 +64,13 @@ const ReactExcelRenderer_01 = () => {
   };
 
   const handleFile2 = (e) => {
-    setButtonHide(true);
+    setTButtonHide(true);
     const file = e.target.files[0];
     ExcelRenderer(file, (err, res) => {
       if (err) {
         console.log(err);
       } else {
-        setHeader(res.rows[0]);
+        setTheader(res.rows[0]);
       }
 
       let newRows = [];
@@ -79,7 +83,8 @@ const ReactExcelRenderer_01 = () => {
           });
         }
       });
-      setCols(newRows);
+      setTcols(newRows);
+      //   setDtr(newRows);
     });
   };
 
@@ -103,85 +108,58 @@ const ReactExcelRenderer_01 = () => {
       });
   };
 
+  const submit_data2 = () => {
+    const timeKeepingData = emp.map((data) => {
+      return {
+        cutoff_id: dateCutoff.start + "_" + dateCutoff.end,
+        // REG: ExcelData.filter((fil) => fil.employee_id == data.employee_id)[0]
+        //   ?.REG,
+        // ABSENT: ExcelData.filter(
+        //   (fil) => fil.employee_id == data.employee_id
+        // )[0]?.ABSENT,
+        // employee_id: ExcelData.filter(
+        //   (fil) => fil.employee_id == data.employee_id
+        // )[0]?.employee_id,
+      };
+    });
+    axios
+      .post("http://localhost:8587/test/bulk-create-timekeeping", {
+        timekeeping: timeKeepingData,
+        dtr: dtr,
+      })
+      .then((res) => {
+        console.log(res);
+        alert("Data Submited Successfully!");
+        // to load updated employee list
+        axios
+          .get("http://localhost:8587/test/get-data-timekeeping")
+          .then((res) => {
+            setDtr(res.data);
+            setDtr(Tcols);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+        setTButtonHide(false);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
-    <div className="main">
-      <div className="content-1">
-        <h1>Employee File</h1>
-        <input type="file" onChange={handleFile} />
-        <br />
-
-        <div className="inside-content-1">
-          <table>
-            <thead>
-              <tr>
-                {header.map((h, i) => (
-                  <>
-                    <th key={i}>{h}</th>
-                  </>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {cols.map((data, index) => {
-                return (
-                  <>
-                    <tr>
-                      <td>{data.employee_name}</td>
-                      <td>{data.employee_id}</td>
-                    </tr>
-                  </>
-                );
-              })}
-            </tbody>
-          </table>
-        </div>
-        <br />
-        {buttonHide && (
-          <button id="button-submit" onClick={submit_data}>
-            Submit
-          </button>
-        )}
-      </div>
-
-      {/* 2nd part */}
-
-      <div className="content-2">
-        <h1>Employee List</h1>
-        <table>
-          <thead>
-            <tr>
-              <th>Employee Name</th>
-              <th>Employee ID</th>
-            </tr>
-          </thead>
-          <tbody>
-            {emp.map((data) => {
-              return (
-                <>
-                  <tr>
-                    <td>{data.employee_name}</td>
-                    <td>{data.employee_id}</td>
-                  </tr>
-                </>
-              );
-            })}
-          </tbody>
-        </table>
-      </div>
-
-      {/* 3rd part timekeeping */}
-
-      <div>
+    <>
+      <div className="main">
         <div className="content-1">
-          <h1>Time Keeping</h1>
-          <input type="file" onChange={handleFile2} />
+          <h1>Employee File</h1>
+          <input type="file" onChange={handleFile} />
           <br />
 
           <div className="inside-content-1">
             <table>
               <thead>
                 <tr>
-                  {Theader.map((h, i) => (
+                  {header.map((h, i) => (
                     <>
                       <th key={i}>{h}</th>
                     </>
@@ -189,7 +167,7 @@ const ReactExcelRenderer_01 = () => {
                 </tr>
               </thead>
               <tbody>
-                {Tcols.map((data, index) => {
+                {cols.map((data, index) => {
                   return (
                     <>
                       <tr>
@@ -209,8 +187,133 @@ const ReactExcelRenderer_01 = () => {
             </button>
           )}
         </div>
+
+        {/* 2nd part */}
+
+        <div className="content-2">
+          <h1>Employee List</h1>
+          <table>
+            <thead>
+              <tr>
+                <th>Employee Name</th>
+                <th>Employee ID</th>
+              </tr>
+            </thead>
+            <tbody>
+              {emp.map((data) => {
+                return (
+                  <>
+                    <tr>
+                      <td>{data.employee_name}</td>
+                      <td>{data.employee_id}</td>
+                    </tr>
+                  </>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+
+        {/* 3rd part timekeeping */}
       </div>
-    </div>
+
+      <div className="main2">
+        <div>
+          <div className="content-2">
+            <h1>Time Keeping</h1>
+            <input type="file" onChange={handleFile2} />
+
+            {/* cutoff date */}
+            <div className="cutofId">
+              <div>
+                <label htmlFor="">Date Start</label>
+                <input
+                  type="date"
+                  onChange={(e) =>
+                    setDateCutoff({ ...dateCutoff, start: e.target.value })
+                  }
+                />
+              </div>
+
+              <div>
+                <label htmlFor="">Date End</label>
+                <input
+                  type="date"
+                  onChange={(e) =>
+                    setDateCutoff({ ...dateCutoff, end: e.target.value })
+                  }
+                />
+              </div>
+            </div>
+
+            <br />
+
+            <div className="inside-content-1">
+              <table>
+                <thead>
+                  <tr>
+                    {Theader.map((h, i) => (
+                      <>
+                        <th key={i}>{h}</th>
+                      </>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {Tcols.map((data, index) => {
+                    return (
+                      <>
+                        <tr>
+                          <td>{data.Time}</td>
+                          <td>{data.BioID}</td>
+                        </tr>
+                      </>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+
+            {/* {TbuttonHide && (
+            )} */}
+            <div className="button-container">
+              <button
+                id="btn-cutoff"
+                className="cutoff-btn"
+                onClick={submit_data2}
+              >
+                Create Cuttoff
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div className="content-3">
+          <h1>DTR</h1>
+          <table>
+            <thead>
+              <tr>
+                <th>Bio Id</th>
+                <th>Time In</th>
+                <th>Time Out</th>
+              </tr>
+            </thead>
+            <tbody>
+              {/* {dtr.data.dtr.map((data) => {
+              return (
+                <>
+                  <tr>
+                    <td>{data.BioID}</td>
+                    <td>{data.Time}</td>
+                  </tr>
+                </>
+              );
+            })} */}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </>
   );
 };
 
