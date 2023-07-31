@@ -19,7 +19,9 @@ const ReactExcelRenderer_01 = () => {
   const [dateCutoff, setDateCutoff] = useState({ start: "", end: "" });
   const [TbuttonHide, setTButtonHide] = useState(false);
 
-  console.log(Tcols);
+  console.log(dtr);
+  // console.log(dataDtr);
+  // console.log(Tcols);
 
   useEffect(() => {
     axios
@@ -84,7 +86,7 @@ const ReactExcelRenderer_01 = () => {
         }
       });
       setTcols(newRows);
-      //   setDtr(newRows);
+      setDtr(newRows);
     });
   };
 
@@ -124,8 +126,8 @@ const ReactExcelRenderer_01 = () => {
     });
     axios
       .post("http://localhost:8587/test/bulk-create-timekeeping", {
-        timekeeping: timeKeepingData,
-        dtr: dtr,
+        timeKeepingData,
+        dtr,
       })
       .then((res) => {
         console.log(res);
@@ -145,6 +147,10 @@ const ReactExcelRenderer_01 = () => {
       .catch((err) => {
         console.log(err);
       });
+  };
+
+  const table_click = (data) => {
+    console.log(data);
   };
 
   return (
@@ -203,7 +209,14 @@ const ReactExcelRenderer_01 = () => {
               {emp.map((data) => {
                 return (
                   <>
-                    <tr>
+                    <tr
+                      onClick={() =>
+                        table_click({
+                          id: data.employee_id,
+                          emp: data.employee_name,
+                        })
+                      }
+                    >
                       <td>{data.employee_name}</td>
                       <td>{data.employee_id}</td>
                     </tr>
@@ -290,27 +303,6 @@ const ReactExcelRenderer_01 = () => {
 
         <div className="content-3">
           <h1>DTR</h1>
-          <table>
-            <thead>
-              <tr>
-                <th>Bio Id</th>
-                <th>Time In</th>
-                <th>Time Out</th>
-              </tr>
-            </thead>
-            <tbody>
-              {/* {dtr.data.dtr.map((data) => {
-              return (
-                <>
-                  <tr>
-                    <td>{data.BioID}</td>
-                    <td>{data.Time}</td>
-                  </tr>
-                </>
-              );
-            })} */}
-            </tbody>
-          </table>
         </div>
       </div>
     </>

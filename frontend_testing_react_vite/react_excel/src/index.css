@@ -112,6 +112,7 @@
 .content-2 table td {
   text-align: center;
   border: 1px solid gray;
+  cursor: pointer;
 }
 
 .content-3 {
@@ -124,22 +125,6 @@
 
 .content-3 h1 {
   text-align: center;
-}
-
-.content-3 table {
-  width: 100%;
-  height: auto;
-}
-
-.content-3 table th {
-  padding: 5px;
-  background: gainsboro;
-  text-align: center;
-}
-
-.content-3 table td {
-  text-align: center;
-  border: 1px solid gray;
 }
 
 .cutofId {
