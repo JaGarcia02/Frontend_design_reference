@@ -160,3 +160,261 @@
   justify-content: center;
   padding: 4px;
 }
+
+/* *********************************** 2nd Project *********************************** */
+.main3 {
+}
+
+.ultra-main {
+  display: flex;
+}
+
+.create-cutoff-container {
+  border: 2px solid black;
+  width: 350px;
+  height: auto;
+  padding: 4px;
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+
+.title1 {
+  text-align: center;
+}
+
+.selectCutoff-container {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-cutoff {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.btn-cutoff button {
+  width: 100px;
+  height: 25px;
+  cursor: pointer;
+  outline: none;
+  border: 2px solid #42b883;
+  background: white;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  transition: 0.5s;
+  font-weight: bold;
+}
+.btn-cutoff button:hover {
+  background: #42b883;
+  border-radius: 10px;
+}
+
+/* Inputs */
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* ----Import Section----- */
+.import-dtr-container {
+  border: 2px solid black;
+  width: 350px;
+  height: auto;
+  padding: 4px;
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+
+.import-file-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* from file import */
+.dtr-file {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+.dtr-file label {
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.dtr-import-file {
+  width: 170px;
+}
+
+.summary-file {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+.summary-import-file {
+  width: 170px;
+}
+
+.import-cutoff {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.import-dropdown {
+  width: 150px;
+}
+
+/* import submit btn */
+.import-submit {
+  margin-top: 1rem;
+  width: 100px;
+  height: 25px;
+  cursor: pointer;
+  outline: none;
+  border: 2px solid #42b883;
+  background: white;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  transition: 0.5s;
+  font-weight: bold;
+}
+
+.import-submit:hover {
+  background: #42b883;
+  border-radius: 10px;
+}
+
+.import-btn-submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.table-dtr {
+}
+
+.table-dtr table {
+  width: 100%;
+}
+
+.table-dtr table thead {
+}
+
+.table-dtr table thead tr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.table-dtr table thead tr th {
+  width: 100%;
+  border: 1px solid black;
+}
+
+.table-dtr table tbody tr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.table-dtr table tbody tr td {
+  width: 100%;
+  border: 1px solid black;
+  text-align: center;
+}
+
+/* ********** Data DTR ********** */
+.data-dtr-container {
+  border: 2px solid black;
+  width: 350px;
+  height: auto;
+  padding: 4px;
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+
+.data-dtr-container table {
+  width: 100%;
+}
+
+.data-dtr-container table thead tr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.data-dtr-container table thead tr th {
+  width: 100%;
+  border: 1px solid black;
+}
+
+.data-dtr-container table tbody tr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.data-dtr-container table tbody tr td {
+  width: 100%;
+  border: 1px solid black;
+}
+
+.right {
+  overflow: auto;
+}
+
+/* Summary Section */
+.import-summary-container {
+  border: 2px solid black;
+  width: 750px;
+  height: auto;
+  padding: 4px;
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+
+/* table */
+.import-summary-container table {
+  width: 100%;
+}
+
+.import-summary-container table thead tr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.import-summary-container table thead tr th {
+  width: 100%;
+  border: 1px solid black;
+  font-size: 12px;
+}
+
+.import-summary-container table tbody tr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.import-summary-container table tbody tr td {
+  width: 100%;
+  border: 1px solid black;
+  font-size: 12px;
+}
