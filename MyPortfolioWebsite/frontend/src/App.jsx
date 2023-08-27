@@ -24,3 +24,6 @@ function App() {
 }
 
 export default App;
+
+// https://www.youtube.com/watch?v=FjBJJepT6Ts&list=PLaaIOhrtglx7pv3XDtw5kCOgWM7xGRqdf&index=4&t=288s
+// 53:47
