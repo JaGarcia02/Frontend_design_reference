@@ -1,7 +1,13 @@
 import React from "react";
 import heroImg from "../../assets/images/hero.svg";
+import JaGarcia from "../../assets/images/Ja_Garcia.jpg";
 import CountUp from "react-countup";
-import { AiOutlineMail } from "react-icons/ai";
+import {
+  AiOutlineMail,
+  AiFillGithub,
+  AiFillFacebook,
+  AiFillLinkedin,
+} from "react-icons/ai";
 import { IoAppsOutline } from "react-icons/io5";
 
 const Hero = () => {
@@ -67,9 +73,76 @@ const Hero = () => {
               <span className="text-smallTextColor text-[15px] font-[600]">
                 Follow me:
               </span>
+              <span>
+                <a
+                  href="#github"
+                  className="text-smallTextColor text-[18px] font[600]"
+                >
+                  <AiFillGithub />
+                </a>
+              </span>
+              <span>
+                <a
+                  href="#github"
+                  className="text-smallTextColor text-[18px] font[600]"
+                >
+                  <AiFillFacebook />
+                </a>
+              </span>
+              <span>
+                <a
+                  href="#github"
+                  className="text-smallTextColor text-[18px] font[600]"
+                >
+                  <AiFillLinkedin />
+                </a>
+              </span>
             </div>
           </div>
           {/* ==================== hero left ==================== */}
+          {/* ==================== My picture ==================== */}
+          <div className="basis-1/3 mt-10 sm:mt-0">
+            <figure className="flex items-center justify-center">
+              <img src={JaGarcia} className="rounded-full" alt="" />
+            </figure>
+          </div>
+          {/* ==================== Profile content ==================== */}
+          <div className="md:basis-1/5 flex justify-between text-center mt-10 flex-wrap gap-3 md:mt-0 md:flex-col md:justify-end md:text-end">
+            <div className="mb-10">
+              <h2 className="text-headingColor font-[700] text-[32px]">
+                <CountUp start={0} end={6} duration={2} suffix="*" />
+              </h2>
+              <h4 className="text-headingColor font-[700] text-[18px]">
+                Years of Experience
+              </h4>
+            </div>
+            <div className="mb-10">
+              <h2 className="text-headingColor font-[700] text-[32px]">
+                <CountUp start={0} end={100} duration={2} suffix="%" />
+              </h2>
+              <h4 className="text-headingColor font-[700] text-[18px]">
+                Success Rate
+              </h4>
+            </div>
+            <div className="mb-10">
+              <h2 className="text-headingColor font-[700] text-[32px]">
+                <CountUp start={0} end={150} duration={2} suffix="*" />
+              </h2>
+              <h4 className="text-headingColor font-[700] text-[18px]">
+                Happy Client
+              </h4>
+            </div>
+            <div className="mb-10">
+              <h2 className="text-headingColor font-[700] text-[32px]">
+                <CountUp start={0} end={240} duration={2} suffix="*" />
+              </h2>
+              <h4 className="text-headingColor font-[700] text-[18px]">
+                Project Completed
+              </h4>
+            </div>
+          </div>
+          {/* ==================== Profile content ==================== */}
+          {/* ==================== My picture ==================== */}
         </div>
       </div>
     </section>

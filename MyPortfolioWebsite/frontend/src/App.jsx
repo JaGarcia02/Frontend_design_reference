@@ -4,6 +4,7 @@ import Aos from "aos";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Hero from "./components/UI/Hero";
+import Service from "./components/UI/Service";
 
 function App() {
   useEffect(() => {
@@ -15,6 +16,7 @@ function App() {
       <Header />
       <main>
         <Hero />
+        <Service />
       </main>
       <Footer />
     </>
