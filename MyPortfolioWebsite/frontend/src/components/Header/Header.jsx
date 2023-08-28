@@ -54,7 +54,7 @@ const Header = () => {
 
           {/* ================== menu right ================== */}
           <div className="flex items-center gap-4">
-            <button className="flex items-center gap-2 text-smallTextColor font-[600] border border-solid border-smallTextColor py-2 px-4 rounded-[8px] max-h-[40px] w-[123px] hover:bg-smallTextColor hover:text-white hover:font-[600] hover:w-[123px] ease-in-out duration-700 ">
+            <button className="flex items-center gap-2 text-smallTextColor font-[600] border border-solid border-smallTextColor py-2 px-4 rounded-[8px] max-h-[40px] w-[125px] hover:bg-smallTextColor hover:text-white hover:font-[600] hover:w-[125px] ease-in-out duration-700 ">
               <BsSend />
               Let's Talk
             </button>
