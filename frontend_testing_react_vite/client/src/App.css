@@ -1,0 +1,102 @@
+.sectionContainer {
+  height: 100vh;
+  width: auto;
+  background: #66bfbf;
+}
+.container {
+  width: 100%;
+  display: flex;
+}
+.content {
+  border: 2px solid black;
+  background: #fcf4d9;
+  width: 500px;
+  height: 500px;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  padding: 5px;
+}
+.content h1 {
+  text-align: center;
+}
+
+/* Button */
+.add-dtr {
+  width: 150px;
+  height: 25px;
+  text-align: center;
+  background: #a7bcb9;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 900;
+}
+
+.content table {
+  background: white;
+  width: 100%;
+}
+.content table thead tr {
+  display: flex;
+}
+
+.one {
+  width: 10%;
+}
+
+.two {
+  width: 10%;
+}
+
+.three {
+  width: 15%;
+}
+
+.four {
+  width: 16%;
+}
+
+.five {
+  width: 16%;
+}
+
+.six {
+  width: 15%;
+}
+
+.seven {
+  width: 15%;
+}
+
+/* Table data */
+
+.td-content {
+  width: 100%;
+  height: 200px;
+  text-align: center;
+  overflow: auto;
+}
+.td-one {
+  width: 3%;
+}
+.td-two {
+  width: 3%;
+}
+.td-three {
+  width: 5%;
+}
+.td-four {
+  width: 5%;
+}
+.td-five {
+  width: 5%;
+}
+.td-six {
+  width: 5%;
+}
+.td-seven {
+  width: 4%;
+}
