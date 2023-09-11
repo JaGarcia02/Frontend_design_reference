@@ -1,7 +1,8 @@
+import axios from "axios";
 import React, { useState } from "react";
 import uniqid from "uniqid";
 
-const AddDtr = ({ setOpenAdd }) => {
+const AddDtr = ({ setOpenAdd, setDtr }) => {
   const [dataArray, setDataArray] = useState({ data: [] });
   const [dtrInput, setDtrInput] = useState({
     id: "",
@@ -33,6 +34,28 @@ const AddDtr = ({ setOpenAdd }) => {
   const RemoveInput = (id) => {
     const newValue = dataArray.data.filter((fil) => fil.id != id);
     setDataArray({ ...dataArray, data: newValue });
+  };
+
+  const SubmitData = () => {
+    const test_data = dataArray.data.map((data) => {
+      return {
+        Cutoff: data.cutoff,
+        Time_in: data.timeIn,
+        Time_break_out: data.breakStart,
+        Time_break_in: data.breakEnd,
+        Time_out: data.timeOut,
+        BioID: data.bioId,
+      };
+    });
+    console.log(test_data);
+    axios
+      .post("http://localhost:9000/api/new_DTR/dtr_submit", {
+        dtr: test_data,
+      })
+      .then((res) => {
+        console.log(res.data);
+        setDtr(res.data);
+      });
   };
 
   return (
@@ -196,7 +219,9 @@ const AddDtr = ({ setOpenAdd }) => {
           </>
         )}
         <dir className="button-container">
-          <button className="submit-button">Save</button>
+          <button className="submit-button" onClick={SubmitData}>
+            Save
+          </button>
         </dir>
       </div>
     </div>

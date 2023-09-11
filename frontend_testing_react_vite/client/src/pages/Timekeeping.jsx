@@ -59,7 +59,7 @@ const Timekeeping = () => {
           </div>
         </div>
       </section>
-      {openAdd && <AddDtr setOpenAdd={setOpenAdd} />}
+      {openAdd && <AddDtr setOpenAdd={setOpenAdd} setDtr={setDtr} />}
     </>
   );
 };
