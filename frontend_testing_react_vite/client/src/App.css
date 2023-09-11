@@ -151,11 +151,18 @@
   width: 30px;
 }
 
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
 .submit-button {
+  margin-top: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 1px solid black;
   width: 100px;
   height: 25px;
+  background: #8dc6ff;
 }

@@ -31,8 +31,8 @@ const AddDtr = ({ setOpenAdd }) => {
   console.log(dataArray);
 
   const RemoveInput = (id) => {
-    // const newValue = dataArray.data.filter((fil) => fil.id != id);
-    // setDataArray({ ...dataArray, data: newValue });
+    const newValue = dataArray.data.filter((fil) => fil.id != id);
+    setDataArray({ ...dataArray, data: newValue });
   };
 
   return (
@@ -109,7 +109,7 @@ const AddDtr = ({ setOpenAdd }) => {
                     }
                   />
                 </div>
-                {/* <button onClick={RemoveInput(array.id)}>Remove</button> */}
+                <button onClick={() => RemoveInput(array.id)}>Remove</button>
               </div>
             </>
           );
@@ -195,7 +195,9 @@ const AddDtr = ({ setOpenAdd }) => {
             </div>
           </>
         )}
-        <button className="submit-button">Save</button>
+        <dir className="button-container">
+          <button className="submit-button">Save</button>
+        </dir>
       </div>
     </div>
   );
