@@ -61,7 +61,12 @@ const AddDtr = ({ setOpenAdd, setDtr }) => {
   return (
     <div className="modal-container-main">
       <div className="modal-container">
-        <h1 className="title">Hello</h1>
+        <div className="title-container">
+          <h1 className="title">Hello</h1>
+          <button className="close-button" onClick={() => setOpenAdd(false)}>
+            x
+          </button>
+        </div>
         {dataArray.data.map((array) => {
           return (
             <>
@@ -80,7 +85,7 @@ const AddDtr = ({ setOpenAdd, setDtr }) => {
                 <div className="input-container">
                   <label htmlFor="">Time in</label>
                   <input
-                    type="text"
+                    type="time"
                     placeholder="Time in"
                     defaultValue={array.timeIn}
                     onChange={(e) =>
@@ -91,7 +96,7 @@ const AddDtr = ({ setOpenAdd, setDtr }) => {
                 <div className="input-container">
                   <label htmlFor="">Break start</label>
                   <input
-                    type="text"
+                    type="time"
                     placeholder="Break start"
                     defaultValue={array.breakStart}
                     onChange={(e) =>
@@ -102,7 +107,7 @@ const AddDtr = ({ setOpenAdd, setDtr }) => {
                 <div className="input-container">
                   <label htmlFor="">Break end</label>
                   <input
-                    type="text"
+                    type="time"
                     placeholder="Break end"
                     defaultValue={array.breakEnd}
                     onChange={(e) =>
@@ -113,7 +118,7 @@ const AddDtr = ({ setOpenAdd, setDtr }) => {
                 <div className="input-container">
                   <label htmlFor="">Time out</label>
                   <input
-                    type="text"
+                    type="time"
                     placeholder="Time out"
                     defaultValue={array.timeOut}
                     onChange={(e) =>
@@ -161,7 +166,7 @@ const AddDtr = ({ setOpenAdd, setDtr }) => {
                 <label htmlFor="">Time in</label>
                 <input
                   id="timeIn"
-                  type="text"
+                  type="time"
                   placeholder="Time in"
                   onChange={(e) =>
                     setDtrInput({ ...dtrInput, timeIn: e.target.value })
@@ -172,7 +177,7 @@ const AddDtr = ({ setOpenAdd, setDtr }) => {
                 <label htmlFor="">Break start</label>
                 <input
                   id="breakStart"
-                  type="text"
+                  type="time"
                   placeholder="Break start"
                   onChange={(e) =>
                     setDtrInput({ ...dtrInput, breakStart: e.target.value })
@@ -183,7 +188,7 @@ const AddDtr = ({ setOpenAdd, setDtr }) => {
                 <label htmlFor="">Break end</label>
                 <input
                   id="breakEnd"
-                  type="text"
+                  type="time"
                   placeholder="Break end"
                   onChange={(e) =>
                     setDtrInput({ ...dtrInput, breakEnd: e.target.value })
@@ -194,7 +199,7 @@ const AddDtr = ({ setOpenAdd, setDtr }) => {
                 <label htmlFor="">Time out</label>
                 <input
                   id="timeOut"
-                  type="text"
+                  type="time"
                   placeholder="Time out"
                   onChange={(e) =>
                     setDtrInput({ ...dtrInput, timeOut: e.target.value })

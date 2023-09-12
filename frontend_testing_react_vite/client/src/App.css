@@ -1,6 +1,6 @@
 .sectionContainer {
   height: 100vh;
-  width: auto;
+  width: 100%;
   position: absolute;
 }
 .container {
@@ -10,7 +10,7 @@
 .content {
   border: 2px solid black;
   background: #fcf4d9;
-  width: 500px;
+  width: 100%;
   height: 500px;
   margin-top: 1rem;
   margin-left: 1rem;
@@ -48,7 +48,7 @@
 }
 
 .two {
-  width: 10%;
+  width: 15%;
 }
 
 .three {
@@ -56,11 +56,11 @@
 }
 
 .four {
-  width: 16%;
+  width: 15%;
 }
 
 .five {
-  width: 16%;
+  width: 15%;
 }
 
 .six {
@@ -72,6 +72,9 @@
 }
 
 /* Table data */
+.content table tbody tr {
+  display: flex;
+}
 
 .td-content {
   width: 100%;
@@ -80,25 +83,25 @@
   overflow: auto;
 }
 .td-one {
-  width: 3%;
+  width: 10%;
 }
 .td-two {
-  width: 3%;
+  width: 15.8%;
 }
 .td-three {
-  width: 5%;
+  width: 15.5%;
 }
 .td-four {
-  width: 5%;
+  width: 15.5%;
 }
 .td-five {
-  width: 5%;
+  width: 15.5%;
 }
 .td-six {
-  width: 5%;
+  width: 15.5%;
 }
 .td-seven {
-  width: 4%;
+  width: 14%;
 }
 
 /* Add modal */
@@ -145,6 +148,8 @@
 }
 
 .addDtrData {
+  margin-top: 20px;
+  margin-right: 10px;
   background: #42b883;
   border-radius: 50px;
   height: 30px;
@@ -165,4 +170,22 @@
   width: 100px;
   height: 25px;
   background: #8dc6ff;
+}
+
+.title-container {
+  position: absolute;
+  right: 20.8rem;
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+}
+
+.close-button {
+  background: #f95959;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
