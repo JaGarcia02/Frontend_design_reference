@@ -29,8 +29,6 @@ const AddDtr = ({ setOpenAdd, setDtr }) => {
     }
   };
 
-  console.log(dataArray);
-
   const RemoveInput = (id) => {
     const newValue = dataArray.data.filter((fil) => fil.id != id);
     setDataArray({ ...dataArray, data: newValue });
