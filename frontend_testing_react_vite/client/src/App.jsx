@@ -8,6 +8,7 @@ import IdleTime from "./pages/IdleTime";
 import TailwindCSS_project01 from "./pages/TailwindCSS_project01";
 import TailwindCSS_project02 from "./pages/TailwindCSS_project02";
 import Timekeeping from "./pages/Timekeeping";
+import { Test_Page } from "./pages/Test_Page";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/test2" element={<DynamicAddRemove_Page />} />
         <Route path="/test3" element={<DnDTodo_Page />} />
         <Route path="/test4" element={<IdleTime />} />
+        <Route path="/test5" element={<Test_Page />} />
       </Routes>
     </>
   );
