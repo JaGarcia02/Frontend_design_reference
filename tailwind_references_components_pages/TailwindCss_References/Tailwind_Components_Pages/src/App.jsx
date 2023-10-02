@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import Test01 from "./pages/Test_Page/Test01";
+import NavBar_Page from "./pages/Navbar/NavBar_Page";
 
 function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Test01 />} />
+        <Route path="/" element={<NavBar_Page />} />
       </Routes>
     </>
   );

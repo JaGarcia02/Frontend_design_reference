@@ -1,7 +1,7 @@
 import React from "react";
-import NavBar from "../../components/Test01/NavBar";
+import NavBar from "../../components/NavBar/NavBar";
 
-const Test01 = () => {
+const NavBar_Page = () => {
   return (
     <>
       <NavBar />
@@ -10,4 +10,4 @@ const Test01 = () => {
   );
 };
 
-export default Test01;
+export default NavBar_Page;
