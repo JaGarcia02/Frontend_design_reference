@@ -1,9 +1,31 @@
 import React, { useState } from "react";
 import { SiIonic } from "react-icons/si";
-import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
+import {
+  AiOutlineArrowLeft,
+  AiOutlineArrowRight,
+  AiOutlineSchedule,
+  AiFillSetting,
+} from "react-icons/ai";
+import {
+  MdOutlineDashboard,
+  MdManageAccounts,
+  MdOutlineAnalytics,
+} from "react-icons/md";
+import { BsFillInboxesFill, BsFiles } from "react-icons/bs";
+import { BiSearchAlt } from "react-icons/bi";
 
 const Sidebar = () => {
   const [sideOpen, setSideOpen] = useState(true);
+  const Menus = [
+    { title: "Dashboard", icon: <MdOutlineDashboard /> },
+    { title: "Inbox", icon: <BsFillInboxesFill /> },
+    { title: "Accounts", icon: <MdManageAccounts />, gap: true },
+    { title: "Schedule", icon: <AiOutlineSchedule /> },
+    { title: "Search", icon: <BiSearchAlt /> },
+    { title: "Analytics", icon: <MdOutlineAnalytics /> },
+    { title: "Files", icon: <BsFiles />, gap: true },
+    { title: "Setting", icon: <AiFillSetting /> },
+  ];
   return (
     <div className="flex">
       <div
@@ -31,7 +53,9 @@ const Sidebar = () => {
         <div className="flex gap-x-4 items-center ">
           <div>
             <SiIonic
-              className={`cursor-pointer duration-500 text-white text-[25px]`}
+              className={`cursor-pointer duration-500 text-white text-[25px] ml-[5px] ${
+                sideOpen && "rotate-[360deg]"
+              }`}
             />
           </div>
           <h1
@@ -42,6 +66,25 @@ const Sidebar = () => {
             Designer
           </h1>
         </div>
+        <ul className="pt-6">
+          {Menus.map((menu, index) => (
+            <li
+              key={index}
+              className={`text-white text-lg h-[35px] flex items-center gap-x-4 cursor-pointer p-2 hover:bg-light-white rounded-md ${
+                menu.gap ? "mt-9" : "mt-2"
+              } ${index === 0 && "bg-light-white"}`}
+            >
+              <span className="text-[20px]">{menu.icon}</span>
+              <span
+                className={`${
+                  !sideOpen && "scale-0"
+                } origin-left duration-500 ease-in-out text-lg `}
+              >
+                {menu.title}
+              </span>
+            </li>
+          ))}
+        </ul>
       </div>
 
       <div className="p-7 text-2xl font-semibold flex-1 h-screen">
