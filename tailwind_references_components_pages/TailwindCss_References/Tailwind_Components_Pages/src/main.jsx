@@ -3,11 +3,23 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
+import ProductProvider from "./contexts/Ecomerce/ProductContext";
+import SidebarProvider from "./contexts/Ecomerce/SidebarContext";
+import CartProvider from "./contexts/Ecomerce/CartContext";
+CartProvider;
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>
+  <SidebarProvider>
+    <CartProvider>
+      <ProductProvider>
+        <React.StrictMode>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </React.StrictMode>
+      </ProductProvider>
+    </CartProvider>
+  </SidebarProvider>
 );
+
+// https://www.youtube.com/watch?v=CQG11Ys7UgA&ab_channel=ThatSwedishDrummer
