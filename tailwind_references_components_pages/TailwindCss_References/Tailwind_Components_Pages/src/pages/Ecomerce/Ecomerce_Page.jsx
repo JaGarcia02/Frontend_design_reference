@@ -4,7 +4,6 @@ import Product from "../../components/Ecomerce/Product";
 
 const Ecomerce_Page = () => {
   const { products } = useContext(ProductContext);
-  // console.log(products);
 
   const filteredProducts = products.filter((item) => {
     return (
