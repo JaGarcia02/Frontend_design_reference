@@ -22,10 +22,12 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   </SidebarProvider>
 );
 
-// https://www.youtube.com/watch?v=CQG11Ys7UgA&ab_channel=ThatSwedishDrummer 56:06 / 2:05:27
+// https://www.youtube.com/watch?v=CQG11Ys7UgA&ab_channel=ThatSwedishDrummer
 
 // https://www.youtube.com/watch?v=Yh8c9prVPN0&ab_channel=ThatSwedishDrummer
 
 // https://www.youtube.com/watch?v=iKCyy6zzL4Y&ab_channel=ThatSwedishDrummer
 
 // https://www.youtube.com/watch?v=caWIyBvvyMU&ab_channel=ThatSwedishDrummer
+
+// https://www.youtube.com/watch?v=lGnuiAZCjuM&ab_channel=CristianMihai 1:08:33 / 2:05:27 ,  1:25:10 / 2:05:27
