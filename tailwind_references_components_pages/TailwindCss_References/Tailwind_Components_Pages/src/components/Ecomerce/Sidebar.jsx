@@ -9,7 +9,7 @@ import { CartContext } from "../../contexts/Ecomerce/CartContext";
 
 const Sidebar = () => {
   const { isOpen, handleClose, setIsOpen } = useContext(SidebarContext);
-  const { cart, setCart, clearCart } = useContext(CartContext);
+  const { cart, setCart, clearCart, total } = useContext(CartContext);
   return (
     <div
       className={`${
@@ -25,7 +25,7 @@ const Sidebar = () => {
           <IoMdArrowForward className="text-2xl" />
         </div>
       </div>
-      <div>
+      <div className="flex flex-col gap-y-2 h-[520px] lg:h-[640px] overflow-y-auto overflow-x-hidden border-b  ">
         {cart.map((item) => {
           return <CartItem item={item} key={item.id} />;
         })}
@@ -34,7 +34,8 @@ const Sidebar = () => {
       <div className="flex flex-col gap-y-3 py-4 mt-4">
         <div className=" flex w-full justify-between items-center">
           <div className="uppercase font-semibold">
-            <span className="mr-2">Total:</span> $ 10000
+            <span className="mr-2">Total:</span> ${" "}
+            {parseFloat(total).toFixed(2)}
           </div>
           <div
             onClick={clearCart}
