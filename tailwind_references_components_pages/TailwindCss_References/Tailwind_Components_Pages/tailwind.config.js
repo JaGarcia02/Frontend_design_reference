@@ -13,10 +13,22 @@ export default {
       },
     },
     screens: {
+      xxsm: "280px",
+      xsm: "360px",
+      mdsm: "370px",
+      lgsm: "390px",
+      xlsm: "400px",
+      mdxsmmd: "700px",
+      mdsmmd: "800px",
+      mdlgmd: "900px",
+      xsmxsm: "540px",
       sm: "640px",
       md: "768px",
       lg: "1024px",
+      lgmd: "1280px",
+      xxlsm: "1441px",
       xl: "1440px",
+      xxl: "1680px",
     },
     extend: {
       colors: {

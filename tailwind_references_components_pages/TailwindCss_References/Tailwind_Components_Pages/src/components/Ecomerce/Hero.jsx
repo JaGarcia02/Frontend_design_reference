@@ -1,20 +1,30 @@
 import React from "react";
 import EcomercePicture from "../../images/Ecomerce/pexels-cottonbro-studio-10679171.jpg";
-
+import EcomercePicture02 from "../../images/Ecomerce/woman_hero.png";
+import { Link } from "react-router-dom";
 const Hero = () => {
   return (
-    <section className="bg-pink-200 h-[800px] bg-hero bg-no-repeat bg-center bg-cover py-24">
+    <section className="relative -top-[10px] h-[800px] bg-hero bg-no-repeat bg-center bg-cover py-24">
       <div className="container mx-auto flex justify-around h-full">
-        <div className="flex">
-          <div>
-            <div>New Trend</div>
+        {/* Left */}
+        <div className="flex flex-col justify-center">
+          <div className="font-semibold flex items-center uppercase">
+            <div className="w-10 h-[2px] bg-red-500 mr-3"></div>
+            New Trend
           </div>
-          <h1>
+          <h1 className="text-[70px] leading-[1.1] font-light mb-4">
             AUTUMN SALE STYLISH <br />
           </h1>
+          <Link
+            to={"/2"}
+            className="self-start font-semibold border-b-2 border-primary"
+          >
+            Discover More
+          </Link>
         </div>
+        {/* Right */}
         <div className="hidden lg:block">
-          <img src={EcomercePicture} alt="" />
+          <img src={EcomercePicture02} alt="" />
         </div>
       </div>
     </section>

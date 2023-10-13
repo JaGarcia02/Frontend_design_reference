@@ -11,15 +11,22 @@ import ProductDetails_Page from "./pages/Ecomerce/ProductDetails_Page";
 function App() {
   return (
     <>
-      <Header />
+      {/* Basic Components */}
       <Routes>
         <Route path="/" element={<NavBar_Page />} />
         <Route path="/1" element={<SideBar_Page />} />
-        <Route path="/2" element={<Ecomerce_Page />} />
-        <Route path="/product/:id" element={<ProductDetails_Page />} />
       </Routes>
-      <Sidebar />
-      <Footer />
+
+      {/* Ecomerece Website */}
+      <div>
+        <Header />
+        <Routes>
+          <Route path="/2" element={<Ecomerce_Page />} />
+          <Route path="/product/:id" element={<ProductDetails_Page />} />
+        </Routes>
+        <Sidebar />
+        <Footer />
+      </div>
     </>
   );
 }
