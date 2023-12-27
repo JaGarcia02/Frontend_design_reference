@@ -1,6 +1,7 @@
 import React from "react";
 import AD_Sidebar from "../../components/AdminDashboard/AD_Sidebar";
 import AD_DashboardView from "../../components/AdminDashboard/AD_DashboardView";
+import AD_DashboardContent from "../../components/AdminDashboard/AD_DashboardContent";
 
 const AdminDashboard_Page = () => {
   return (
@@ -12,6 +13,8 @@ const AdminDashboard_Page = () => {
           </div>
           <div className="basis-[85%]">
             <AD_DashboardView />
+
+            <AD_DashboardContent />
           </div>
         </div>
       </section>
