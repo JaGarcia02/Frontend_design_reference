@@ -27,6 +27,7 @@ const ProductDetails_Page = () => {
   return (
     <>
       <div>
+        <Header />
         <section className="pt-32 pb-12 xl:py-32 h-screen flex items-center">
           <div className="container mx-auto">
             {/* Img Wrapper */}
@@ -53,6 +54,7 @@ const ProductDetails_Page = () => {
             </div>
           </div>
         </section>
+        <Footer />
       </div>
     </>
   );

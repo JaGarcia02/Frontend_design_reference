@@ -18,6 +18,7 @@ const Ecomerce_Page = () => {
   return (
     <>
       <div>
+        <Header />
         <section className="py-16">
           <div className="container mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 xl:p-[25px] lg:p-[35px] gap-[30px] max-w-sm mx-auto md:max-w-none md:mx-0">
@@ -31,6 +32,7 @@ const Ecomerce_Page = () => {
             </div>
           </div>
         </section>
+        <Footer />
       </div>
     </>
   );
